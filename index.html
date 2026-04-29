@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal Demo</title>
+
+<style>
+:root{
+  --bg:#f3f4f6;
+  --surface:#fff;
+  --text:#111;
+  --line:#d1d5db;
+  --accent:#9f1239;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family: Roboto, system-ui, sans-serif;
+  background:var(--bg);
+}
+
+/* CENTER CONTAINER */
+.wrapper{
+  max-width:1400px;
+  margin:20px auto;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  overflow:hidden;
+}
+
+/* HEADER */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 24px;
+  border-bottom:4px solid var(--accent);
+  background:#fff;
+}
+
+.left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.menu{
+  font-size:26px;
+  line-height:1;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+}
+
+.brand-logo{
+  height:62px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.right{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-align:right;
+  line-height:1.4;
+}
+
+.avatar{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#94a3b8;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+}
+
+/* CONTENT */
+.content{
+  padding:30px 40px;
+}
+
+.info{
+  line-height:2;
+  margin-bottom:25px;
+  font-size:18px;
+}
+
+h2{
+  color:var(--accent);
+  margin-bottom:20px;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th{
+  background:var(--accent);
+  color:#fff;
+  padding:14px;
+  text-align:left;
+}
+
+td{
+  padding:14px;
+  border:1px solid var(--line);
+}
+
+tr:hover td{
+  background:#fafafa;
+}
+
+/* PASSWORD OVERLAY */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.box{
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  text-align:center;
+  width:300px;
+  box-shadow:0 12px 30px rgba(0,0,0,.2);
+}
+
+.box h3{
+  margin-top:0;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+}
+
+button{
+  margin-top:12px;
+  padding:10px;
+  width:100%;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  border-radius:6px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD -->
+<div class="overlay" id="lock">
+  <div class="box">
+    <h3>Enter Password</h3>
+    <input type="password" id="pass" placeholder="123456">
+    <button onclick="check()">Enter</button>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <div class="topbar">
+    <div class="left">
+      <div class="menu">☰</div>
+      <div class="brand">
+        <img src="logo.png" alt="Logo" class="brand-logo">
+      </div>
+    </div>
+
+    <div class="right">
+      <div>
+        24000068@student.email<br>
+        Vi Nguyen<br>
+        <span style="text-decoration:underline;">Sign out</span>
+      </div>
+      <div class="avatar">Vi</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="info">
+      <div><strong>Full Name:</strong></div>
+      <div><strong>Student ID:</strong> 24000068</div>
+    </div>
+
+    <h2>DETAILS OF TUITION BILLING</h2>
+
+<table>
+  <tr>
+    <th>Program</th>
+    <th>Bill Number</th>
+    <th>No. of Subjects</th>
+    <th>Unit Price</th>
+    <th>Amount</th>
+    <th>Deduction</th>
+    <th>Billed</th>
+  </tr>
+
+  <tr>
+    <td>BBUS</td>
+    <td>24000068_BBUS_26T2</td>
+    <td>2</td>
+    <td>19,375,000</td>
+    <td>38,750,000</td>
+    <td>0</td>
+    <td>38,750,000</td>
+  </tr>
+
+  <tr>
+    <td>BBUS</td>
+    <td>24000068_BBUS_26T1</td>
+    <td>2</td>
+    <td>19,375,000</td>
+    <td>38,750,000</td>
+    <td>0</td>
+    <td>38,750,000</td>
+  </tr>
+
+  <tr>
+    <td>BBUS</td>
+    <td>24000068_BBUS_25T3</td>
+    <td>3</td>
+    <td>19,375,000</td>
+    <td>58,125,000</td>
+    <td>0</td>
+    <td>58,125,000</td>
+  </tr>
+
+  <tr>
+    <td>BBUS</td>
+    <td>24000068_BBUS_25T2</td>
+    <td>2</td>
+    <td>18,750,000</td>
+    <td>37,500,000</td>
+    <td>0</td>
+    <td>37,500,000</td>
+  </tr>
+</table>
+
+    <p style="margin-top:20px;">
+      For details on your tuition payment, please check link example.com
+    </p>
+
+  </div>
+</div>
+
+<script>
+function check(){
+  const p = document.getElementById("pass").value;
+  if(p === "123456"){
+    document.getElementById("lock").style.display = "none";
+  } else {
+    alert("Wrong password");
+  }
+}
+</script>
+
+</body>
+</html>
